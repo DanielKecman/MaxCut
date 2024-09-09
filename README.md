@@ -15,4 +15,7 @@ The solver takes in 2 versions of inputs:
 	}
 }
 
+Since this is for undirected graphs, to avoid double counting errors will be thrown if the same edge is counted twice. This goes for assigning the same edge with two values (ex. (0, 1) with weight 1 and (0, 1) with weight 2)
+as well as providing an edge with its reverse equal (ex. (0, 1) with weight 1 and (1, 0) with weight 1) so only provide one weight for each weight.
+
 As mentioned above, the formulation stems from semidefinite programming, and in particular the Goemans-Williamson Max-Cut Algorithm, which can be found here https://math.mit.edu/~goemans/PAPERS/maxcut-jacm.pdf.
