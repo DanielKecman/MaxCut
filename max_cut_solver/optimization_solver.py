@@ -59,7 +59,7 @@ class OptimizationSolver:
             raise ValueError(all_error_messages)
 
     def _create_variables(self):
-        return cp.Variable((self._num_nodes, self._num_nodes), symmetric=True)
+        return cp.Variable((self._num_nodes, self._num_nodes), PSD=True)
 
     def _create_constraints(self):
         constraints = [self._variables >> 0]
